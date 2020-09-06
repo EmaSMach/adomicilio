@@ -2,6 +2,7 @@ import os
 
 from django.db import models
 from django.contrib.auth.models import AbstractUser, User
+# from django.core.validators import RegexValidator # To use later in a phone number validation
 from django.conf import settings
 
 # Create your models here.
@@ -30,5 +31,6 @@ def get_image_path(instance, filename):
 
 
 class Person(AbstractUser):
+    phone_number = models.CharField(max_length=13, null=True, blank=True)
     address = models.ForeignKey(Address, related_name='people', on_delete=models.PROTECT, null=True, blank=True)
     picture = models.ImageField(upload_to=get_image_path, null=True, blank=True)
