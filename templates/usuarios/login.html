@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Iniciar Sesión{% endblock %}
+
+{% block content %}
+
+<form method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!-- {{ form.as_p }} -->
+    {{ form.username }}
+    <label class="active" for="id_username">Nombre de Usuario</label>
+    <p>{{ form.username.errors }}</p>
+    <!-- <br> -->
+    {{ form.password }}
+    <label for="id_password1">Contraseña</label>
+    <input type="submit" value="Iniciar Sesión">
+</form>
+{% if error is not none %}
+<p>{{ error }}</p>
+{% endif %}
+<div>
+    {% if user.is_anonymous %}
+        <a href="{% url 'usuarios:registrar_usuario' %}">Registrarse</a>
+    {% endif %}
+</div>
+{% endblock content %}

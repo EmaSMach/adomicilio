@@ -1,0 +1,13 @@
+<nav id="navbar">
+    <ul>
+        <li><a href="{% url 'usuarios:inicio' %}"><img src="" alt="Logo" srcset=""></a></li>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Categorías</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'usuarios:cerrar_sesion' %}">Cerrar Sessión</a></li>
+        <li>Hola {{ user.username }}</li>
+        {% else %}
+        <li><a href="{% url 'usuarios:iniciar_sesion' %}">Iniciar Sesión</a></li>
+        {% endif %}
+    </ul>
+</nav>

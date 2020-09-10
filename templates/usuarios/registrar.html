@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Registrarse{% endblock %}
+
+{% block content %}
+
+<form method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!-- {{ form.as_p }} -->
+    {{ form.username }}
+    <label class="active" for="id_username">Nombre de Usuario</label>
+    <p>{{ form.username.errors }}</p>
+    <!-- <br> -->
+    {{ form.password1 }}
+    <label for="id_password1">Contraseña</label>
+    {{ form.password1.errors }}
+    {{ form.password2 }}
+    <label for="id_password2">Contraseña</label>
+    {{ form.password2.errors }}
+    {{ form.foto }}
+    <label for="id_foto">Foto de Perfil</label>
+    {{ form.foto.errors }}
+    <input type="submit" value="Registrarse">
+</form>
+{% endblock content %}
