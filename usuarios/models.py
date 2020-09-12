@@ -27,10 +27,11 @@ def get_image_path(instancia, filename):
     if instancia_id is None:
         instancia_id = Usuario.objects.order_by("id").last().id + 1
     path = os.path.join("images/users/", str(instancia_id), "profile", filename)
+    print(path)
     return path
 
 
-class Usuario(User):
+class Usuario(AbstractUser):
     numero_telefono = models.CharField(max_length=13, null=True, blank=True)
     domicilio = models.ForeignKey(Domicilio, related_name='people', on_delete=models.PROTECT, null=True, blank=True)
     foto = models.ImageField(upload_to=get_image_path, null=True, blank=True)
