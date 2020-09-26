@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A tu casa</title>
+    <link rel=”icon” type=”image/png” href=”/img/canvas.png”/>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!-- FUENTES Oswald -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src=https://code.jquery.com/jquery-3.5.1.min.js></script>
+    <script>
+        $(function() {
+            $('#login').click(function() {
+                $(this).next('#login-content').slideToggle();
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="menu-btn">
+        <i class="fas fa-bars fa-2x"></i>
+    </div>
+
+    <div class="container">
+        <!-- Navegación -->
+        <nav class="nav-main">
+            <!-- Brand -->
+            <img src="img/canvas.png" alt="Atucasa" class="nav-brand">
+            <!-- Nav izquierda -->
+            <ul class="nav-menu">
+                <nav class="acceder">
+                    <li>
+                        <a id="login" href="#">Salir</a>
+                        <div id="login-content">
+
+                        </div>
+                    </li>
+                </nav>
+                <li><i class="fa fa-user-plus" aria-hidden="true"></i><a href="#">Perfil</a></li>
+                <li><i class="fa fa-users" aria-hidden="true"></i><a href="#">  Contratar</a></li>
+                <li><i class="fa fa-question-circle" aria-hidden="true"></i><a href="#"> Votar</a></li>
+
+            </ul>
+            <!-- Barra navegadora derecha-->
+            <ul class="nav-menu-right">
+                <li>
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                        <input type="search">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!--Div Post-->
+
+        <header>
+            <h1 style="text-align: center; font-family:'Lato' ;"> Create post user</h1>
+            <br>
+            <h2>Que titulo desea poner</h2>
+            <br>
+            <input type="text">
+            <br>
+            <h3>Que categorias desea destacar</h3>
+            <br>
+            <input type="search">
+            <br>
+            <h3>Descripcion o caracteristica de la tarea</h3>
+            <br>
+            <input type="text" style="height: 30vh; width: 40vw;">
+            <br>
+            <h2>Subir Imagenes</h2>
+            <br>
+            <input type="file"> <br>
+            <input type="submit" style="width: 180px; height: 40px; margin-left: 45%;">
+        </header>
+
+
+        <!--Div Post-->
+</body>
+
+</html>
